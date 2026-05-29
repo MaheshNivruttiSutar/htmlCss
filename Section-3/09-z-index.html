@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>09 — z-index</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f6f8;
+    }
+    h1 { color: #222; }
+    h2 { color: #444; margin-top: 25px; }
+    code { background: #eee; padding: 2px 6px; border-radius: 3px; }
+
+    .wrapper {
+      border: 2px dashed #333;
+      background: #fff;
+      padding: 15px;
+      margin-bottom: 15px;
+      position: relative;
+      height: 200px;
+    }
+
+    .box {
+      position: absolute;
+      width: 150px;
+      height: 100px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      border-radius: 6px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    /* Demo 1: no z-index — later elements win */
+    .demo-1 .a { background: #e94e77; top: 20px; left: 20px; }
+    .demo-1 .b { background: #4a90e2; top: 50px; left: 80px; }
+    .demo-1 .c { background: #00c896; top: 80px; left: 140px; }
+
+    /* Demo 2: with z-index — we take control */
+    .demo-2 .a { background: #e94e77; top: 20px; left: 20px;  z-index: 3; }
+    .demo-2 .b { background: #4a90e2; top: 50px; left: 80px;  z-index: 2; }
+    .demo-2 .c { background: #00c896; top: 80px; left: 140px; z-index: 1; }
+
+    /* Demo 3: z-index not working (no position) */
+    .demo-3 .box { position: static; margin: 5px; display: inline-flex; }
+    .demo-3 .a { background: #e94e77; z-index: 9999; } /* will NOT work */
+    .demo-3 .b { background: #4a90e2; }
+
+    /* Demo 4: stacking context trap */
+    .demo-4 { height: 280px; }
+    .demo-4 .group-one {
+      position: relative;
+      z-index: 1;
+      background: rgba(74,144,226,0.2);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .demo-4 .group-two {
+      position: relative;
+      z-index: 2;
+      background: rgba(233,78,119,0.2);
+      padding: 20px;
+    }
+    .demo-4 .inner-high {
+      position: absolute;
+      z-index: 9999;
+      background: #e94e77;
+      top: 10px;
+      left: 10px;
+      width: 200px;
+      height: 60px;
+    }
+    .demo-4 .inner-low {
+      position: absolute;
+      z-index: 1;
+      background: #4a90e2;
+      top: 30px;
+      left: 50px;
+      width: 200px;
+      height: 60px;
+    }
+  </style>
+</head>
+<body>
+  <h1>09 — <code>z-index</code> (stacking order)</h1>
+
+  <h2>Default: later HTML elements go on TOP</h2>
+  <p>No z-index set. The green box (last in HTML) is on top.</p>
+  <div class="wrapper demo-1">
+    <div class="box a">A (first in HTML)</div>
+    <div class="box b">B</div>
+    <div class="box c">C (last → on top)</div>
+  </div>
+
+  <h2>With z-index: YOU decide who's on top</h2>
+  <p>A has z-index 3, B has 2, C has 1. Now A is on top.</p>
+  <div class="wrapper demo-2">
+    <div class="box a">A (z: 3)</div>
+    <div class="box b">B (z: 2)</div>
+    <div class="box c">C (z: 1)</div>
+  </div>
+
+  <h2>⚠️ z-index DOES NOTHING without <code>position</code>!</h2>
+  <p>A has z-index: 9999 but no position, so it's ignored.</p>
+  <div class="wrapper demo-3" style="height: auto;">
+    <div class="box a">A (z: 9999, no position)</div>
+    <div class="box b">B (no z-index)</div>
+  </div>
+  <p>Fix: add <code>position: relative</code> (or absolute/fixed/sticky).</p>
+
+  <h2>🤯 The stacking context trap</h2>
+  <p>The pink box has <code>z-index: 9999</code> but it's still BELOW the blue box. Why?</p>
+  <p>Because the pink box lives inside group-one (z-index: 1) and the blue box lives inside group-two (z-index: 2). The whole group-two "stacks" above group-one no matter what happens inside.</p>
+  <div class="wrapper demo-4">
+    <div class="group-one">
+      Group One (z-index: 1)
+      <div class="inner-high">Pink (z: 9999)</div>
+    </div>
+    <div class="group-two">
+      Group Two (z-index: 2)
+      <div class="inner-low">Blue (z: 1)</div>
+    </div>
+  </div>
+  <p>🧠 Lesson: <code>z-index</code> competes only within the same <strong>stacking context</strong>. Setting an ancestor's z-index can trap children inside.</p>
+</body>
+</html>

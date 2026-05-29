@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>11 — overflow</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f6f8;
+    }
+    h1 { color: #222; }
+    h2 { color: #444; margin-top: 25px; }
+    code { background: #eee; padding: 2px 6px; border-radius: 3px; }
+
+    .box {
+      width: 300px;
+      height: 150px;
+      border: 2px solid #333;
+      background: #fff;
+      padding: 10px;
+      margin-bottom: 20px;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #222;
+    }
+
+    .visible { overflow: visible; }
+    .hidden  { overflow: hidden; }
+    .scroll  { overflow: scroll; }
+    .auto    { overflow: auto; }
+
+    .xy {
+      overflow-x: auto;
+      overflow-y: hidden;
+      white-space: nowrap;
+    }
+    .xy div {
+      display: inline-block;
+      width: 120px;
+      height: 100px;
+      background: linear-gradient(135deg, #7b61ff, #e94e77);
+      color: white;
+      margin-right: 8px;
+      text-align: center;
+      line-height: 100px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <h1>11 — <code>overflow</code> (content too big for its box)</h1>
+
+  <h2>Default: <code>overflow: visible</code> — content SPILLS OUT</h2>
+  <div class="box visible">
+    This is a lot of text that definitely doesn't fit in a 300px by 150px box. Notice how the text just overflows past the bottom edge of the box, spilling into whatever is below it. This can cause messy layouts! Plus even more text and more text and more text and more text.
+  </div>
+
+  <h2><code>overflow: hidden</code> — clipped, no scrollbar</h2>
+  <div class="box hidden">
+    This is a lot of text that definitely doesn't fit in a 300px by 150px box. The overflow is simply clipped — you can't see or scroll to the hidden parts. Sometimes this is what you want (like for rounded-corner images).
+  </div>
+
+  <h2><code>overflow: scroll</code> — always shows scrollbars</h2>
+  <div class="box scroll">
+    This is a lot of text that definitely doesn't fit in a 300px by 150px box. Scroll me to see more! Even if the content fits, the scrollbars will still be visible (annoying on short content).
+  </div>
+
+  <h2>⭐ <code>overflow: auto</code> — scrollbars ONLY if needed (best default)</h2>
+  <div class="box auto">
+    This is a lot of text that definitely doesn't fit. Scroll to see the rest! With <code>auto</code>, scrollbars appear only when content overflows. This is almost always what you want.
+  </div>
+
+  <h2>Control axes separately: <code>overflow-x / overflow-y</code></h2>
+  <p>Horizontal scrolling gallery:</p>
+  <div class="box xy" style="height: 120px;">
+    <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div>
+    <div>6</div><div>7</div><div>8</div><div>9</div><div>10</div>
+  </div>
+
+  <h2>💡 Common use: scrollable sidebar or chat panel</h2>
+  <pre style="background:#222;color:#fff;padding:15px;border-radius:4px;">.sidebar {
+  height: 100vh;
+  overflow-y: auto;   /* scroll vertically if too long */
+}</pre>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>10 — float</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f6f8;
+    }
+    h1 { color: #222; }
+    h2 { color: #444; margin-top: 25px; }
+    code { background: #eee; padding: 2px 6px; border-radius: 3px; }
+
+    .wrapper {
+      border: 2px dashed #333;
+      background: #fff;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+
+    .image-placeholder {
+      width: 150px;
+      height: 100px;
+      background: linear-gradient(135deg, #7b61ff, #e94e77);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      border-radius: 6px;
+    }
+
+    .float-left {
+      float: left;
+      margin: 0 15px 10px 0;
+    }
+
+    .float-right {
+      float: right;
+      margin: 0 0 10px 15px;
+    }
+
+    /* Clearfix problem: no height */
+    .no-clearfix {
+      border: 2px dashed #e94e77;
+    }
+
+    /* Modern fix */
+    .modern-fix {
+      border: 2px dashed #00c896;
+      display: flow-root;
+    }
+
+    /* Classic clearfix */
+    .classic-fix::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    .classic-fix { border: 2px dashed #4a90e2; }
+  </style>
+</head>
+<body>
+  <h1>10 — <code>float</code> (legacy but still useful for text wrap)</h1>
+
+  <h2>✅ Classic use: text wrapping around an image</h2>
+  <div class="wrapper">
+    <div class="image-placeholder float-left">IMAGE</div>
+    <p>This text flows AROUND the floated image. Float was originally designed for this exact thing — magazine-style layouts. The image is pushed to the left and the text fills in the space to the right, then wraps below it when it runs out. Even in modern CSS, this is still the easiest way to wrap text around an image. Note the margin on the image creates breathing room around it. This is the ONLY real-world use case you should reach for <code>float</code> in 2026 — for everything else, use Flexbox or Grid.</p>
+  </div>
+
+  <h2>Float right (same thing, other side)</h2>
+  <div class="wrapper">
+    <div class="image-placeholder float-right">IMAGE</div>
+    <p>Now the image is floated to the right, and the text flows along its left side. This is how most blog posts / magazines structure their content. Notice how naturally the text flows around the floated element, including wrapping under it once the bottom of the image is reached.</p>
+  </div>
+
+  <h2>⚠️ The clearfix problem</h2>
+  <p>When all children are floated, the parent collapses to 0 height! See the pink dashed border below — it's hugging tightly because it thinks it has no content.</p>
+  <div class="wrapper no-clearfix">
+    <div class="image-placeholder float-left">A</div>
+    <div class="image-placeholder float-left" style="background: linear-gradient(135deg, #00c896, #4a90e2); margin-left: 10px;">B</div>
+  </div>
+
+  <h2>💎 Modern fix: <code>display: flow-root</code></h2>
+  <p>Clean and simple. The parent now properly contains the floats.</p>
+  <div class="wrapper modern-fix">
+    <div class="image-placeholder float-left">A</div>
+    <div class="image-placeholder float-left" style="background: linear-gradient(135deg, #00c896, #4a90e2); margin-left: 10px;">B</div>
+  </div>
+
+  <h2>Classic clearfix hack (for older browser support)</h2>
+  <pre style="background:#222;color:#fff;padding:15px;border-radius:4px;">.parent::after {
+  content: "";
+  display: block;
+  clear: both;
+}</pre>
+  <div class="wrapper classic-fix">
+    <div class="image-placeholder float-left">A</div>
+    <div class="image-placeholder float-left" style="background: linear-gradient(135deg, #00c896, #4a90e2); margin-left: 10px;">B</div>
+  </div>
+
+  <p style="background: #fff8e1; border-left: 4px solid #f5a623; padding: 12px 16px; border-radius: 4px;">
+    💡 <strong>2026 rule:</strong> Use <code>float</code> only for text wrapping around images. For layouts, use Flexbox (Section 4) or Grid (Section 5).
+  </p>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>05 — gap</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f6f8;
+    }
+    h1 { color: #222; }
+    h2 { color: #444; margin-top: 25px; }
+    code { background: #eee; padding: 2px 6px; border-radius: 3px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 2px dashed #333;
+      background: #fff;
+      padding: 8px;
+      margin-bottom: 15px;
+    }
+
+    .item {
+      background: #7b61ff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 18px;
+      border-radius: 4px;
+    }
+
+    .gap-none   { gap: 0; }
+    .gap-all    { gap: 20px; }
+    .row-only   { row-gap: 40px; }
+    .col-only   { column-gap: 40px; }
+    .shorthand  { gap: 10px 40px; }
+  </style>
+</head>
+<body>
+  <h1>05 — <code>gap</code> (spacing between items)</h1>
+
+  <h2>No gap (<code>gap: 0</code>)</h2>
+  <div class="grid gap-none">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+    <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+  </div>
+
+  <h2><code>gap: 20px</code> — space between rows AND columns</h2>
+  <div class="grid gap-all">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+    <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+  </div>
+
+  <h2><code>row-gap: 40px</code> — only between rows</h2>
+  <div class="grid row-only">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+    <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+  </div>
+
+  <h2><code>column-gap: 40px</code> — only between columns</h2>
+  <div class="grid col-only">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+    <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+  </div>
+
+  <h2>Shorthand: <code>gap: 10px 40px</code> (row col)</h2>
+  <div class="grid shorthand">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+    <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+  </div>
+</body>
+</html>

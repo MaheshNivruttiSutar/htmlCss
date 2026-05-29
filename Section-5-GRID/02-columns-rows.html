@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>02 — Columns & Rows</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f6f8;
+    }
+    h1 { color: #222; }
+    h2 { color: #444; margin-top: 25px; }
+    code { background: #eee; padding: 2px 6px; border-radius: 3px; }
+
+    .grid {
+      display: grid;
+      border: 2px dashed #333;
+      background: #fff;
+      padding: 8px;
+      gap: 8px;
+      margin-bottom: 15px;
+    }
+
+    .item {
+      background: #7b61ff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 20px;
+      border-radius: 4px;
+    }
+
+    .three-cols     { grid-template-columns: 100px 100px 100px; }
+    .cols-auto      { grid-template-columns: 100px 100px 100px; }
+    .cols-and-rows  {
+      grid-template-columns: 100px 100px 100px;
+      grid-template-rows: 80px 150px;
+    }
+  </style>
+</head>
+<body>
+  <h1>02 — Columns & Rows</h1>
+
+  <h2><code>grid-template-columns: 100px 100px 100px;</code></h2>
+  <p>Three fixed 100px columns.</p>
+  <div class="grid three-cols">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div>
+
+  <h2>Extra items wrap automatically to new rows</h2>
+  <p>Same three columns — but with 7 items. Rows are created automatically!</p>
+  <div class="grid cols-auto">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+    <div class="item">7</div>
+  </div>
+
+  <h2>Defining rows with <code>grid-template-rows</code></h2>
+  <p>3 columns (100px each) + 2 rows (80px, then 150px).</p>
+  <div class="grid cols-and-rows">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+  </div>
+</body>
+</html>

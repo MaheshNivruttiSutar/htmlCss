@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>04 — box-sizing</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f4f6f8; }
+    h1 { color: #222; }
+    h2 { color: #444; margin-top: 25px; }
+    code { background: #eee; padding: 2px 6px; border-radius: 3px; }
+
+    .wrapper { border: 2px dashed #333; background: #fff; padding: 15px; margin-bottom: 15px; }
+
+    .ruler {
+      width: 200px;
+      height: 6px;
+      background: #222;
+      margin-bottom: 5px;
+      position: relative;
+    }
+    .ruler::after {
+      content: "200px (expected)";
+      position: absolute;
+      top: 8px;
+      left: 0;
+      font-size: 12px;
+      color: #222;
+    }
+
+    .box {
+      width: 200px;
+      padding: 20px;
+      border: 5px solid #e94e77;
+      background: #7b61ff;
+      color: white;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .content-box { box-sizing: content-box; }
+    .border-box  { box-sizing: border-box; }
+  </style>
+</head>
+<body>
+  <h1>04 — <code>box-sizing</code>: the pro trick</h1>
+
+  <h2>Default: <code>box-sizing: content-box</code></h2>
+  <p>Width 200px, but actual rendered width is <strong>200 + 20*2 + 5*2 = 250px</strong>!</p>
+  <div class="wrapper">
+    <div class="ruler"></div>
+    <div class="box content-box">
+      width: 200px<br>
+      + padding: 20px<br>
+      + border: 5px<br>
+      = 250px wide!
+    </div>
+  </div>
+
+  <h2>Fix: <code>box-sizing: border-box</code></h2>
+  <p>Now the box is EXACTLY 200px wide. ✅</p>
+  <div class="wrapper">
+    <div class="ruler"></div>
+    <div class="box border-box">
+      width: 200px<br>
+      (includes padding & border)<br>
+      = 200px wide
+    </div>
+  </div>
+
+  <h2>💎 The global reset every pro uses</h2>
+  <pre style="background:#222; color:#fff; padding:15px; border-radius:4px;">/* Put this at the top of your CSS */
+* {
+  box-sizing: border-box;
+}</pre>
+  <p>That's it. Your life just got 10× easier.</p>
+</body>
+</html>

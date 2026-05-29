@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>01 — Flexbox Basics</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f6f8;
+    }
+    h1 { color: #222; }
+    h2 { color: #444; margin-top: 30px; }
+    p  { color: #555; }
+
+    .flex-container {
+      display: flex;
+      border: 2px dashed #333;
+      padding: 10px;
+      background: #fff;
+      margin-bottom: 10px;
+    }
+
+    .flex-item {
+      background: #4a90e2;
+      color: white;
+      padding: 20px;
+      margin: 5px;
+      font-size: 24px;
+      text-align: center;
+      border-radius: 4px;
+    }
+
+    .no-flex {
+      border: 2px dashed #333;
+      padding: 10px;
+      background: #fff;
+      margin-bottom: 10px;
+    }
+    .no-flex .flex-item {
+      background: #e94e77;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <h1>01 — Flexbox Basics</h1>
+  <p>Just add <code>display: flex</code> to the parent, and all direct children line up in a row automatically.</p>
+
+  <h2>❌ Without flexbox (using default block behavior)</h2>
+  <p>Items stack vertically because <code>div</code> is block-level.</p>
+  <div class="no-flex">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+  </div>
+
+  <h2>✅ With <code>display: flex</code></h2>
+  <p>Now items line up horizontally — no floats, no hacks!</p>
+  <div class="flex-container">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+  </div>
+</body>
+</html>

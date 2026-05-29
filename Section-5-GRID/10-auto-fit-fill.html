@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>10 — auto-fit vs auto-fill</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f6f8;
+    }
+    h1 { color: #222; }
+    h2 { color: #444; margin-top: 25px; }
+    code { background: #eee; padding: 2px 6px; border-radius: 3px; }
+    .highlight {
+      background: #fff8e1;
+      border-left: 4px solid #f5a623;
+      padding: 12px 16px;
+      border-radius: 4px;
+      margin: 15px 0;
+    }
+
+    .grid {
+      display: grid;
+      border: 2px dashed #333;
+      background: #fff;
+      padding: 8px;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .item {
+      background: #7b61ff;
+      color: white;
+      padding: 30px 10px;
+      text-align: center;
+      font-size: 18px;
+      border-radius: 4px;
+    }
+
+    .fit  { grid-template-columns: repeat(auto-fit,  minmax(200px, 1fr)); }
+    .fill { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+  </style>
+</head>
+<body>
+  <h1>10 — <code>auto-fit</code> vs <code>auto-fill</code></h1>
+
+  <div class="highlight">
+    <strong>📏 Resize your browser window slowly</strong> (from very wide to very narrow) to see the difference.
+    Both auto-fit and auto-fill add/remove columns responsively — but they behave differently when there's extra space.
+  </div>
+
+  <h2>⭐ <code>auto-fit</code> — most common. Items stretch to fill empty space.</h2>
+  <p>Only 3 items. On a wide screen, they STRETCH to fill the row.</p>
+  <div class="grid fit">
+    <div class="item">Card 1</div>
+    <div class="item">Card 2</div>
+    <div class="item">Card 3</div>
+  </div>
+
+  <h2><code>auto-fill</code> — keeps empty tracks. Items stay at minimum size.</h2>
+  <p>Same 3 items, but empty columns are preserved. Items don't stretch past 200px min.</p>
+  <div class="grid fill">
+    <div class="item">Card 1</div>
+    <div class="item">Card 2</div>
+    <div class="item">Card 3</div>
+  </div>
+
+  <h2>Both work great with many items — the classic responsive card pattern</h2>
+  <div class="grid fit">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+    <div class="item">7</div>
+    <div class="item">8</div>
+  </div>
+
+  <p><strong>💡 Rule of thumb:</strong> Use <code>auto-fit</code> for responsive card grids. Use <code>auto-fill</code> only when you specifically want predictable item sizes / preserved empty tracks.</p>
+</body>
+</html>

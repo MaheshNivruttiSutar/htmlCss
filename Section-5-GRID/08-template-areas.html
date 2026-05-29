@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>08 — grid-template-areas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f6f8;
+    }
+    h1 { color: #222; }
+    h2 { color: #444; margin-top: 25px; }
+    code { background: #eee; padding: 2px 6px; border-radius: 3px; }
+    pre {
+      background: #fff;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+    }
+
+    /* Layout 1: basic */
+    .page {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      grid-template-rows: 60px 1fr 60px;
+      grid-template-areas:
+        "header  header"
+        "sidebar main"
+        "footer  footer";
+      gap: 8px;
+      height: 320px;
+      border: 2px dashed #333;
+      padding: 8px;
+      background: #fff;
+      margin-bottom: 20px;
+    }
+    .page > div {
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      font-size: 18px;
+    }
+    .header  { grid-area: header;  background: #e94e77; }
+    .sidebar { grid-area: sidebar; background: #7b61ff; }
+    .main    { grid-area: main;    background: #4a90e2; }
+    .footer  { grid-area: footer;  background: #00c896; }
+
+    /* Layout 2: holy grail */
+    .holy {
+      display: grid;
+      grid-template-columns: 150px 1fr 150px;
+      grid-template-rows: 60px 1fr 60px;
+      grid-template-areas:
+        "header header header"
+        "left   main   right"
+        "footer footer footer";
+      gap: 8px;
+      height: 320px;
+      border: 2px dashed #333;
+      padding: 8px;
+      background: #fff;
+      margin-bottom: 20px;
+    }
+    .holy > div {
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      font-size: 18px;
+    }
+    .h-header { grid-area: header; background: #e94e77; }
+    .h-left   { grid-area: left;   background: #f5a623; }
+    .h-main   { grid-area: main;   background: #4a90e2; }
+    .h-right  { grid-area: right;  background: #7b61ff; }
+    .h-footer { grid-area: footer; background: #00c896; }
+
+    /* Layout 3: with empty cell */
+    .with-empty {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 60px 1fr 60px;
+      grid-template-areas:
+        "header header header"
+        ".      main   sidebar"
+        "footer footer footer";
+      gap: 8px;
+      height: 320px;
+      border: 2px dashed #333;
+      padding: 8px;
+      background: #fff;
+      margin-bottom: 20px;
+    }
+    .with-empty > div {
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      font-size: 18px;
+    }
+    .we-header  { grid-area: header;  background: #e94e77; }
+    .we-main    { grid-area: main;    background: #4a90e2; }
+    .we-sidebar { grid-area: sidebar; background: #7b61ff; }
+    .we-footer  { grid-area: footer;  background: #00c896; }
+  </style>
+</head>
+<body>
+  <h1>08 — <code>grid-template-areas</code> (the most readable feature!)</h1>
+  <p>Draw your layout using ASCII-like strings. Name areas, then assign them to children.</p>
+
+  <h2>Basic page layout</h2>
+  <pre>grid-template-areas:
+  "header  header"
+  "sidebar main"
+  "footer  footer";</pre>
+  <div class="page">
+    <div class="header">Header</div>
+    <div class="sidebar">Sidebar</div>
+    <div class="main">Main Content</div>
+    <div class="footer">Footer</div>
+  </div>
+
+  <h2>Holy Grail Layout (5 areas)</h2>
+  <pre>grid-template-areas:
+  "header header header"
+  "left   main   right"
+  "footer footer footer";</pre>
+  <div class="holy">
+    <div class="h-header">Header</div>
+    <div class="h-left">Left</div>
+    <div class="h-main">Main</div>
+    <div class="h-right">Right</div>
+    <div class="h-footer">Footer</div>
+  </div>
+
+  <h2>Empty cells with <code>.</code></h2>
+  <pre>grid-template-areas:
+  "header header header"
+  ".      main   sidebar"
+  "footer footer footer";</pre>
+  <div class="with-empty">
+    <div class="we-header">Header</div>
+    <div class="we-main">Main</div>
+    <div class="we-sidebar">Sidebar</div>
+    <div class="we-footer">Footer</div>
+  </div>
+
+  <p>⚠️ Named areas MUST form rectangles. Diagonal layouts won't work.</p>
+</body>
+</html>

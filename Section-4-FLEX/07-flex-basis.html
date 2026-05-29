@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>07 — flex-basis</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f6f8;
+    }
+    h1 { color: #222; }
+    h2 { color: #444; margin-top: 25px; margin-bottom: 5px; }
+    code { background: #eee; padding: 2px 6px; border-radius: 3px; }
+
+    .flex-container {
+      display: flex;
+      border: 2px dashed #333;
+      background: #fff;
+      padding: 8px;
+      margin-bottom: 15px;
+    }
+    .flex-item {
+      background: #4a90e2;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+      border-radius: 4px;
+      margin-right: 6px;
+      font-size: 20px;
+    }
+
+    .demo-1 .flex-item:nth-child(1) { width: 10%; }
+    .demo-1 .flex-item:nth-child(2) { width: 30%; }
+    .demo-1 .flex-item:nth-child(3) { width: 20%; }
+    .demo-1 .flex-item { flex-grow: 1; }
+
+    .demo-2 .flex-item:nth-child(1) { width: 10%; }
+    .demo-2 .flex-item:nth-child(2) { width: 30%; }
+    .demo-2 .flex-item:nth-child(3) { width: 20%; }
+    .demo-2 .flex-item { flex-grow: 1; flex-basis: 0; }
+
+    .demo-3 .flex-item { width: 20%; }
+    .demo-3 .flex-item:nth-child(1) { flex-basis: 40%; background: #e94e77; }
+  </style>
+</head>
+<body>
+  <h1>07 — flex-basis (starting size)</h1>
+  <p><code>flex-basis</code> sets the base size of an item BEFORE grow/shrink is applied. Default is <code>auto</code> (uses <code>width</code>).</p>
+
+  <h2>Problem: different widths + <code>flex-grow: 1</code> = items stay different sizes</h2>
+  <p>Widths are 10%, 30%, 20%. Each item adds the same leftover space → still unequal!</p>
+  <div class="flex-container demo-1">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+  </div>
+
+  <h2>Fix: <code>flex-basis: 0</code> — now all items start equal and grow equally</h2>
+  <div class="flex-container demo-2">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+  </div>
+
+  <h2>Override width with <code>flex-basis: 40%</code></h2>
+  <p>Item 1 has <code>width: 20%</code> but <code>flex-basis: 40%</code>. Flex-basis wins.</p>
+  <div class="flex-container demo-3">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+  </div>
+</body>
+</html>

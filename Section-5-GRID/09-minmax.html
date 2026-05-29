@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>09 — minmax()</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f6f8;
+    }
+    h1 { color: #222; }
+    h2 { color: #444; margin-top: 25px; }
+    code { background: #eee; padding: 2px 6px; border-radius: 3px; }
+
+    .grid {
+      display: grid;
+      border: 2px dashed #333;
+      background: #fff;
+      padding: 8px;
+      gap: 8px;
+      margin-bottom: 15px;
+    }
+
+    .item {
+      background: #7b61ff;
+      color: white;
+      padding: 18px;
+      text-align: center;
+      font-size: 18px;
+      border-radius: 4px;
+      word-wrap: break-word;
+    }
+
+    .demo-1 { grid-template-columns: minmax(200px, 1fr) 2fr; }
+    .demo-2 { grid-template-columns: repeat(3, minmax(150px, 1fr)); }
+    .demo-3 { grid-template-columns: minmax(100px, 300px) 1fr; }
+  </style>
+</head>
+<body>
+  <h1>09 — <code>minmax()</code> (min and max sizing)</h1>
+  <p>Format: <code>minmax(min-size, max-size)</code></p>
+  <p><strong>Try resizing your browser window</strong> to see the effect.</p>
+
+  <h2><code>minmax(200px, 1fr) 2fr</code> — first column never below 200px</h2>
+  <div class="grid demo-1">
+    <div class="item">minmax(200px, 1fr)</div>
+    <div class="item">2fr</div>
+  </div>
+
+  <h2><code>repeat(3, minmax(150px, 1fr))</code> — each column at least 150px</h2>
+  <p>If window is too narrow, content will overflow rather than squish too small.</p>
+  <div class="grid demo-2">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div>
+
+  <h2><code>minmax(100px, 300px)</code> — column between 100 and 300px</h2>
+  <div class="grid demo-3">
+    <div class="item">between 100-300px</div>
+    <div class="item">1fr (grows to fill)</div>
+  </div>
+</body>
+</html>

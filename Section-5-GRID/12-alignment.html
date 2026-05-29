@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>12 — Alignment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f6f8;
+    }
+    h1 { color: #222; }
+    h2 { color: #444; margin-top: 25px; }
+    code { background: #eee; padding: 2px 6px; border-radius: 3px; }
+    .rule {
+      background: #e7f5ff;
+      border-left: 4px solid #4a90e2;
+      padding: 12px 16px;
+      border-radius: 4px;
+      margin: 15px 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 150px);
+      grid-template-rows: repeat(2, 80px);
+      border: 2px dashed #333;
+      background: #fff;
+      padding: 8px;
+      gap: 8px;
+      margin-bottom: 15px;
+    }
+
+    .item {
+      background: #7b61ff;
+      color: white;
+      padding: 8px 14px;
+      font-size: 16px;
+      border-radius: 4px;
+    }
+
+    /* items inside cells */
+    .ji-start   { justify-items: start; }
+    .ji-end     { justify-items: end; }
+    .ji-center  { justify-items: center; }
+    .ai-start   { align-items: start; }
+    .ai-end     { align-items: end; }
+    .ai-center  { align-items: center; }
+    .place-c    { place-items: center; }
+
+    /* one item */
+    .one-special .item:nth-child(3) {
+      place-self: center;
+      background: #e94e77;
+    }
+
+    /* whole grid */
+    .wide-container {
+      height: 250px;
+      width: 100%;
+    }
+    .justify-c { justify-content: center; }
+    .justify-sb { justify-content: space-between; }
+    .align-c   { align-content: center; }
+  </style>
+</head>
+<body>
+  <h1>12 — Alignment: items vs content</h1>
+
+  <div class="rule">
+    <strong>💡 Memory rule:</strong><br>
+    <code>items</code> = align each item INSIDE its own cell<br>
+    <code>content</code> = align the WHOLE GRID inside the container
+  </div>
+
+  <h2>🟪 <code>justify-items: start</code> (default-ish)</h2>
+  <p>Items stick to the left of their cells.</p>
+  <div class="grid ji-start">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+    <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+  </div>
+
+  <h2><code>justify-items: center</code></h2>
+  <div class="grid ji-center">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+    <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+  </div>
+
+  <h2><code>justify-items: end</code></h2>
+  <div class="grid ji-end">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+    <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+  </div>
+
+  <h2><code>align-items: center</code> (vertically in cell)</h2>
+  <div class="grid ai-center">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+    <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+  </div>
+
+  <h2>💎 <code>place-items: center</code> (shorthand for both)</h2>
+  <p>This is the easiest way to center everything in CSS!</p>
+  <div class="grid place-c">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+    <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+  </div>
+
+  <h2>Only item 3 uses <code>place-self: center</code> (pink one)</h2>
+  <div class="grid one-special">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+    <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+  </div>
+
+  <hr style="margin: 30px 0;">
+
+  <h2>🟦 Whole-grid alignment (when grid is smaller than container)</h2>
+
+  <h2><code>justify-content: center</code> — whole grid centered horizontally</h2>
+  <div class="grid justify-c wide-container">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+    <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+  </div>
+
+  <h2><code>justify-content: space-between</code></h2>
+  <div class="grid justify-sb wide-container">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+    <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+  </div>
+
+  <h2><code>align-content: center</code> — whole grid centered vertically</h2>
+  <div class="grid align-c wide-container">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+    <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+  </div>
+</body>
+</html>

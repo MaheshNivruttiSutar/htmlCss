@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>05 — align-self</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f6f8;
+    }
+    h1 { color: #222; }
+    h2 { color: #444; margin-top: 25px; margin-bottom: 5px; }
+    code { background: #eee; padding: 2px 6px; border-radius: 3px; }
+
+    .flex-container {
+      display: flex;
+      align-items: flex-start;
+      border: 2px dashed #333;
+      background: #fff;
+      padding: 8px;
+      height: 180px;
+      margin-bottom: 15px;
+    }
+    .flex-item {
+      width: 20%;
+      height: 60px;
+      background: #4a90e2;
+      color: white;
+      text-align: center;
+      line-height: 60px;
+      border-radius: 4px;
+      margin-right: 10px;
+      font-size: 20px;
+    }
+
+    .demo-1 .flex-item:nth-child(2) { align-self: center; background: #e94e77; }
+    .demo-2 .flex-item:nth-child(3) { align-self: flex-end; background: #e94e77; }
+    .demo-3 .flex-item:nth-child(1) { align-self: flex-end; background: #e94e77; }
+    .demo-3 .flex-item:nth-child(2) { align-self: center;   background: #f5a623; }
+    .demo-3 .flex-item:nth-child(3) { align-self: flex-start; background: #7ed321; }
+  </style>
+</head>
+<body>
+  <h1>05 — align-self (one item at a time)</h1>
+  <p>Container has <code>align-items: flex-start</code> — but we override specific items with <code>align-self</code>.</p>
+
+  <h2>Item 2 → <code>align-self: center</code></h2>
+  <div class="flex-container demo-1">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+  </div>
+
+  <h2>Item 3 → <code>align-self: flex-end</code></h2>
+  <div class="flex-container demo-2">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+  </div>
+
+  <h2>All three items — each with a different <code>align-self</code></h2>
+  <div class="flex-container demo-3">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+  </div>
+
+  <p>⚠️ There's no <code>justify-self</code> in flexbox — main-axis placement is controlled by the container only.</p>
+</body>
+</html>

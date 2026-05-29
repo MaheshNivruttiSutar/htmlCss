@@ -1,0 +1,12 @@
+.text-box-container {
+    display: block;
+}
+
+.text-box1 {
+    margin-bottom: 10px;
+}
+
+.text-style-24 {
+    background-color: rgb(156, 37, 37);
+    padding: 8px;
+}

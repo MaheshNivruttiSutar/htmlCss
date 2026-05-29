@@ -1,0 +1,171 @@
+.lesson-header {
+    max-width: 42rem;
+    margin: 0 auto 1.75rem;
+    font-family: system-ui, sans-serif;
+}
+
+.lesson-header h1 {
+    margin: 0 0 0.35rem;
+    font-size: 1.35rem;
+}
+
+.lesson-intro {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #52525b;
+    line-height: 1.5;
+}
+
+.exercise-flow {
+    max-width: 42rem;
+    margin: 0 auto;
+    font-family: system-ui, sans-serif;
+}
+
+.exercise-block {
+    margin-bottom: 2rem;
+}
+
+.exercise-block:last-child {
+    margin-bottom: 0;
+}
+
+.question-card {
+    padding: 1rem 1.25rem;
+    background: #f4f4f5;
+    border: 1px solid #d4d4d8;
+    border-radius: 8px;
+    margin-bottom: 0.65rem;
+    color: #18181b;
+}
+
+.answer-card {
+    padding: 1rem 1.25rem;
+    background: #fafafa;
+    border: 1px dashed #a1a1aa;
+    border-radius: 8px;
+    color: #18181b;
+}
+
+.answer-card--fullbleed {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.answer-card--fullbleed .qa-label {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+
+.answer-preview {
+    margin-top: 0.5rem;
+}
+
+
+.uber-button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+
+.tweet-button {
+    color: white;
+    background-color: rgb(29, 155, 240);
+    border: none;
+    border-radius: 18px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    cursor: pointer;
+}
+
+.search-result {
+    padding: 10px;
+}
+
+.back-button,
+.next-button {
+    padding-right: 6px;
+}
+
+.stretch-button {
+    background-color: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    transition: all 0.15s ease;
+}
+
+
+.stretch-button:hover {
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+}
+
+.shadow-button {
+    background: #3498db;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+
+    /* 3D effect */
+    box-shadow: 0 5px 0 #2c80b4;
+    transition: all 0.1s ease;
+}
+
+.shadow-button:active {
+    /* Move button down */
+    transform: translate(10px, 10px);
+
+    /* Remove shadow to simulate press */
+    box-shadow: 0 0 0 #2c80b4;
+}
+
+/*
+  Fixed-width slots so hover width change does not push sibling buttons.
+  Slot width = max button width on hover (100px).
+*/
+.expand-button-slot {
+    display: inline-flex;
+    justify-content: center;
+    vertical-align: top;
+    width: 100px;
+    margin: 10px 8px;
+    box-sizing: border-box;
+}
+
+.One-button,
+.Two-button,
+.Three-button {
+    background-color: green;
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    width: 80px;
+    margin: 0;
+    box-sizing: border-box;
+    transition: width 0.15s ease;
+}
+
+.One-button:hover,
+.Two-button:hover,
+.Three-button:hover {
+    width: 100px;
+}
+

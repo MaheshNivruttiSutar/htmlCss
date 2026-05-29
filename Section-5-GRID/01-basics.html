@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>01 — Grid Basics</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f6f8;
+    }
+    h1 { color: #222; }
+    h2 { color: #444; margin-top: 25px; }
+    code { background: #eee; padding: 2px 6px; border-radius: 3px; }
+
+    .no-grid, .grid {
+      border: 2px dashed #333;
+      padding: 10px;
+      background: #fff;
+      margin-bottom: 15px;
+    }
+
+    .grid {
+      display: grid;
+    }
+
+    .item {
+      background: #7b61ff;
+      color: white;
+      padding: 20px;
+      margin: 4px;
+      text-align: center;
+      font-size: 22px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>01 — Grid Basics</h1>
+  <p>The magic starts with one line: <code>display: grid</code></p>
+
+  <h2>❌ Without grid — items stack (block default)</h2>
+  <div class="no-grid">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div>
+
+  <h2>✅ With <code>display: grid</code> — still stacks (single column by default)</h2>
+  <p>By itself, <code>display: grid</code> doesn't look very different. The next step is defining columns!</p>
+  <div class="grid">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div>
+</body>
+</html>

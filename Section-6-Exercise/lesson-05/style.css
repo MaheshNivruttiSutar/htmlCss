@@ -1,0 +1,176 @@
+.lesson-header {
+    max-width: 42rem;
+    margin: 0 auto 1.75rem;
+    font-family: system-ui, sans-serif;
+}
+
+.lesson-header h1 {
+    margin: 0 0 0.35rem;
+    font-size: 1.35rem;
+}
+
+.lesson-intro {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #52525b;
+    line-height: 1.5;
+}
+
+.exercise-flow {
+    max-width: 42rem;
+    margin: 0 auto;
+    font-family: system-ui, sans-serif;
+}
+
+.exercise-block {
+    margin-bottom: 2rem;
+}
+
+.exercise-block:last-child {
+    margin-bottom: 0;
+}
+
+.question-card {
+    padding: 1rem 1.25rem;
+    background: #f4f4f5;
+    border: 1px solid #d4d4d8;
+    border-radius: 8px;
+    margin-bottom: 0.65rem;
+    color: #18181b;
+}
+
+.answer-card {
+    padding: 1rem 1.25rem;
+    background: #fafafa;
+    border: 1px dashed #a1a1aa;
+    border-radius: 8px;
+    color: #18181b;
+}
+
+.answer-card--fullbleed {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.answer-card--fullbleed .qa-label {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+
+.answer-preview {
+    margin-top: 0.5rem;
+}
+
+.text-style-1 {
+    font-family: Tahoma;
+}
+
+.text-style-2,
+.text-style-3,
+.text-style-7,
+.text-style-8,
+.text-style-9 {
+    font-family: Arial;
+}
+
+.text-style-3 {
+    font-style: italic;
+    color: red;
+}
+
+.text-style-4 {
+    margin-bottom: 0;
+}
+
+.text-style-5 {
+    margin-top: 0;
+    color: rgb(126, 115, 115);
+}
+
+.text-style-button {
+    background-color: rgb(31, 145, 31);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.text-style-4,
+.text-style-5,
+.text-style-6,
+.text-style-button {
+    font-family: Verdana;
+}
+
+.container {
+    text-align: center;
+}
+
+.text-style-9 {
+    color: rgb(85, 85, 220);
+}
+
+.text-style-10,
+.text-style-11,
+.text-style-12,
+.text-style-13 {
+    font-family: Arial;
+    margin: 5px 0;
+}
+
+.text-style-10 {
+    color: rgb(245, 99, 0);
+}
+
+.text-style-button-2 {
+    background-color: rgb(0, 113, 227);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 4px 12px;
+    cursor: pointer;
+}
+
+.text-style-14,
+.text-style-15,
+.text-style-16,
+.text-style-17,
+.text-style-18,
+.text-style-19,
+.text-style-20,
+.text-style-21,
+.text-style-22,
+.text-style-23 {
+    font-family: Arial;
+    margin: 5px 0;
+}
+
+.text-style-14 {
+    color: black;
+    font-weight: bold;
+}
+
+.text-style-15 {
+    color: rgb(126, 126, 129);
+}
+
+.text-style-18 {
+    color: rgb(85, 85, 220);
+}
+
+.text-style-21 {
+    color: rgb(24, 128, 56);
+}
+
+.text-style-23 {
+    color: rgb(235, 39, 39);
+}
+
+.text-style-20 {
+    font-size: 14px;
+}
+
+.text-style-20 {
+    font-weight: normal;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>10 — align-content</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f6f8;
+    }
+    h1 { color: #222; }
+    h2 { color: #444; margin-top: 25px; margin-bottom: 5px; }
+    code { background: #eee; padding: 2px 6px; border-radius: 3px; }
+
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      height: 300px;
+      border: 2px dashed #333;
+      background: #fff;
+      padding: 8px;
+      margin-bottom: 15px;
+    }
+    .flex-item {
+      width: 30%;
+      height: 60px;
+      background: #4a90e2;
+      color: white;
+      text-align: center;
+      line-height: 60px;
+      border-radius: 4px;
+      margin: 4px;
+      font-size: 20px;
+    }
+
+    .fs   { align-content: flex-start; }
+    .fe   { align-content: flex-end; }
+    .c    { align-content: center; }
+    .sb   { align-content: space-between; }
+    .sa   { align-content: space-around; }
+    .se   { align-content: space-evenly; }
+  </style>
+</head>
+<body>
+  <h1>10 — align-content (space BETWEEN wrapped rows)</h1>
+  <p>Works ONLY when <code>flex-wrap: wrap</code> is active and there are multiple rows. Acts like <code>justify-content</code> but for the cross axis.</p>
+
+  <h2><code>flex-start</code> — rows bunched at top</h2>
+  <div class="flex-container fs">
+    <div class="flex-item">1</div><div class="flex-item">2</div><div class="flex-item">3</div>
+    <div class="flex-item">4</div><div class="flex-item">5</div><div class="flex-item">6</div>
+  </div>
+
+  <h2><code>flex-end</code> — rows bunched at bottom</h2>
+  <div class="flex-container fe">
+    <div class="flex-item">1</div><div class="flex-item">2</div><div class="flex-item">3</div>
+    <div class="flex-item">4</div><div class="flex-item">5</div><div class="flex-item">6</div>
+  </div>
+
+  <h2><code>center</code> — rows in the middle</h2>
+  <div class="flex-container c">
+    <div class="flex-item">1</div><div class="flex-item">2</div><div class="flex-item">3</div>
+    <div class="flex-item">4</div><div class="flex-item">5</div><div class="flex-item">6</div>
+  </div>
+
+  <h2><code>space-between</code> — rows pushed to top & bottom, gap in middle</h2>
+  <div class="flex-container sb">
+    <div class="flex-item">1</div><div class="flex-item">2</div><div class="flex-item">3</div>
+    <div class="flex-item">4</div><div class="flex-item">5</div><div class="flex-item">6</div>
+  </div>
+
+  <h2><code>space-around</code></h2>
+  <div class="flex-container sa">
+    <div class="flex-item">1</div><div class="flex-item">2</div><div class="flex-item">3</div>
+    <div class="flex-item">4</div><div class="flex-item">5</div><div class="flex-item">6</div>
+  </div>
+
+  <h2><code>space-evenly</code></h2>
+  <div class="flex-container se">
+    <div class="flex-item">1</div><div class="flex-item">2</div><div class="flex-item">3</div>
+    <div class="flex-item">4</div><div class="flex-item">5</div><div class="flex-item">6</div>
+  </div>
+</body>
+</html>

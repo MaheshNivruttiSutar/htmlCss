@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>08 — position: sticky</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f4f6f8;
+    }
+    h1 { color: #222; }
+    code { background: #eee; padding: 2px 6px; border-radius: 3px; }
+
+    section {
+      background: white;
+      margin: 0 0 2px 0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .sticky-header {
+      position: sticky;
+      top: 0;
+      color: white;
+      padding: 15px 20px;
+      font-size: 20px;
+      font-weight: bold;
+      z-index: 10;
+    }
+
+    .s1 .sticky-header { background: #e94e77; }
+    .s2 .sticky-header { background: #4a90e2; }
+    .s3 .sticky-header { background: #00c896; }
+    .s4 .sticky-header { background: #7b61ff; }
+    .s5 .sticky-header { background: #f5a623; }
+
+    section p {
+      padding: 20px;
+      line-height: 1.6;
+      color: #444;
+    }
+    section:nth-child(odd) p { min-height: 300px; }
+    section:nth-child(even) p { min-height: 200px; }
+  </style>
+</head>
+<body>
+
+  <h1 style="padding: 10px 20px;">08 — <code>position: sticky</code></h1>
+  <p style="padding: 0 20px;">Scroll slowly! Each section's header sticks to the top as you scroll through it, then the next one pushes it up. Try it!</p>
+
+  <section class="s1">
+    <div class="sticky-header">🍎 Section 1 — Fruits</div>
+    <p>Apples, bananas, cherries, dates. Scroll down slowly and watch this pink header stick to the top! Once you scroll past this whole section, the next header will push it away and take its place. This is the magic of <code>position: sticky</code>.</p>
+  </section>
+
+  <section class="s2">
+    <div class="sticky-header">🥦 Section 2 — Vegetables</div>
+    <p>Broccoli, carrots, eggplant, kale. Now the blue header is sticky. It behaves like a regular element until you scroll past its normal position, then it STICKS to the top.</p>
+  </section>
+
+  <section class="s3">
+    <div class="sticky-header">🍗 Section 3 — Proteins</div>
+    <p>Chicken, fish, tofu, beans. Keep scrolling!</p>
+  </section>
+
+  <section class="s4">
+    <div class="sticky-header">🍞 Section 4 — Grains</div>
+    <p>Rice, oats, wheat, quinoa. One more section to go!</p>
+  </section>
+
+  <section class="s5">
+    <div class="sticky-header">🍰 Section 5 — Desserts</div>
+    <p>Cake, pie, cookies, ice cream. And we're done! That's <code>position: sticky</code> in action.</p>
+  </section>
+
+  <div style="padding: 20px;">
+    <h2>The CSS</h2>
+    <pre style="background:#222;color:#fff;padding:15px;border-radius:4px;">.sticky-header {
+  position: sticky;
+  top: 0;           /* stick when scroll hits top */
+}</pre>
+    <p>💡 <strong>Important:</strong> sticky only works inside its nearest scrolling parent. If a parent has <code>overflow: hidden</code>, sticky may not work!</p>
+  </div>
+
+  <div style="height: 300px;"></div>
+
+</body>
+</html>

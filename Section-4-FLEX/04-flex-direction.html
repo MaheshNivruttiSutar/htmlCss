@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>04 — flex-direction</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f6f8;
+    }
+    h1 { color: #222; }
+    h2 { color: #444; margin-top: 25px; margin-bottom: 5px; }
+    code { background: #eee; padding: 2px 6px; border-radius: 3px; }
+
+    .flex-container {
+      display: flex;
+      border: 2px dashed #333;
+      background: #fff;
+      padding: 8px;
+      height: 160px;
+      margin-bottom: 15px;
+    }
+    .flex-item {
+      width: 60px;
+      height: 40px;
+      background: #4a90e2;
+      color: white;
+      text-align: center;
+      line-height: 40px;
+      border-radius: 4px;
+      margin: 4px;
+      font-size: 18px;
+    }
+
+    .row          { flex-direction: row; }
+    .row-rev      { flex-direction: row-reverse; }
+    .col          { flex-direction: column; }
+    .col-rev      { flex-direction: column-reverse; }
+  </style>
+</head>
+<body>
+  <h1>04 — flex-direction (change the axes!)</h1>
+  <p>Think of this as: <em>which way do items flow?</em></p>
+
+  <h2><code>row</code> — default (left → right)</h2>
+  <div class="flex-container row">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+  </div>
+
+  <h2><code>row-reverse</code> — right → left (items still start on right)</h2>
+  <div class="flex-container row-rev">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+  </div>
+
+  <h2><code>column</code> — top → bottom (axes are swapped now!)</h2>
+  <p>With column, <code>justify-content</code> controls <strong>vertical</strong> and <code>align-items</code> controls <strong>horizontal</strong>.</p>
+  <div class="flex-container col">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+  </div>
+
+  <h2><code>column-reverse</code> — bottom → top</h2>
+  <div class="flex-container col-rev">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+  </div>
+</body>
+</html>

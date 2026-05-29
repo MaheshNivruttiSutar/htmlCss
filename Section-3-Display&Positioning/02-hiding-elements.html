@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>02 — Hiding Elements</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f6f8;
+    }
+    h1 { color: #222; }
+    h2 { color: #444; margin-top: 25px; }
+    code { background: #eee; padding: 2px 6px; border-radius: 3px; }
+
+    .wrapper {
+      border: 2px dashed #333;
+      background: #fff;
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+
+    .box {
+      background: #7b61ff;
+      color: white;
+      padding: 20px;
+      display: inline-block;
+      margin: 4px;
+      border-radius: 4px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .hidden-none       { display: none; }
+    .hidden-visibility { visibility: hidden; }
+    .hidden-opacity    { opacity: 0; }
+
+    button {
+      padding: 8px 16px;
+      margin-right: 8px;
+      cursor: pointer;
+      border: none;
+      background: #4a90e2;
+      color: white;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>02 — 3 Ways to Hide an Element</h1>
+
+  <h2><code>display: none</code> — completely removed (no space)</h2>
+  <p>Item 2 is gone entirely. Items 1 and 3 are side-by-side.</p>
+  <div class="wrapper">
+    <span class="box">1</span>
+    <span class="box hidden-none">2 (gone)</span>
+    <span class="box">3</span>
+  </div>
+
+  <h2><code>visibility: hidden</code> — invisible but still takes space</h2>
+  <p>Item 2 is invisible, but the gap is still there.</p>
+  <div class="wrapper">
+    <span class="box">1</span>
+    <span class="box hidden-visibility">2 (hidden)</span>
+    <span class="box">3</span>
+  </div>
+
+  <h2><code>opacity: 0</code> — invisible, takes space, STILL clickable</h2>
+  <p>Item 2 is invisible but you can still click/hover it (try clicking the empty spot!).</p>
+  <div class="wrapper">
+    <span class="box">1</span>
+    <span class="box hidden-opacity" onclick="alert('You clicked the invisible box! This is why opacity: 0 is good for fade animations.')">2 (transparent)</span>
+    <span class="box">3</span>
+  </div>
+
+  <h2>Quick comparison</h2>
+  <table style="background:#fff; border-collapse: collapse;">
+    <thead>
+      <tr style="background:#222;color:#fff;">
+        <th style="padding:8px 14px; text-align:left;">Method</th>
+        <th style="padding:8px 14px; text-align:left;">Takes space?</th>
+        <th style="padding:8px 14px; text-align:left;">Clickable?</th>
+        <th style="padding:8px 14px; text-align:left;">Screen reader?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td style="padding:6px 14px;border:1px solid #ccc;"><code>display: none</code></td><td style="padding:6px 14px;border:1px solid #ccc;">❌</td><td style="padding:6px 14px;border:1px solid #ccc;">❌</td><td style="padding:6px 14px;border:1px solid #ccc;">❌</td></tr>
+      <tr><td style="padding:6px 14px;border:1px solid #ccc;"><code>visibility: hidden</code></td><td style="padding:6px 14px;border:1px solid #ccc;">✅</td><td style="padding:6px 14px;border:1px solid #ccc;">❌</td><td style="padding:6px 14px;border:1px solid #ccc;">❌</td></tr>
+      <tr><td style="padding:6px 14px;border:1px solid #ccc;"><code>opacity: 0</code></td><td style="padding:6px 14px;border:1px solid #ccc;">✅</td><td style="padding:6px 14px;border:1px solid #ccc;">✅</td><td style="padding:6px 14px;border:1px solid #ccc;">✅</td></tr>
+    </tbody>
+  </table>
+</body>
+</html>

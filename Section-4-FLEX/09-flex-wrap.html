@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>09 — flex-wrap</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f6f8;
+    }
+    h1 { color: #222; }
+    h2 { color: #444; margin-top: 25px; margin-bottom: 5px; }
+    code { background: #eee; padding: 2px 6px; border-radius: 3px; }
+
+    .flex-container {
+      display: flex;
+      border: 2px dashed #333;
+      background: #fff;
+      padding: 8px;
+      margin-bottom: 15px;
+    }
+    .flex-item {
+      width: 30%;
+      background: #4a90e2;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+      border-radius: 4px;
+      margin: 4px;
+      font-size: 20px;
+    }
+
+    .nowrap  { flex-wrap: nowrap; }
+    .wrap    { flex-wrap: wrap; }
+    .wraprev { flex-wrap: wrap-reverse; }
+  </style>
+</head>
+<body>
+  <h1>09 — flex-wrap (let items go to next line)</h1>
+  <p>5 items, each wanting 30% width (= 150% total). Watch what happens!</p>
+
+  <h2><code>nowrap</code> — default (items squish onto one line)</h2>
+  <div class="flex-container nowrap">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+    <div class="flex-item">4</div>
+    <div class="flex-item">5</div>
+  </div>
+
+  <h2><code>wrap</code> — items that don't fit drop to the next line</h2>
+  <div class="flex-container wrap">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+    <div class="flex-item">4</div>
+    <div class="flex-item">5</div>
+  </div>
+
+  <h2><code>wrap-reverse</code> — wraps, but new rows appear ABOVE</h2>
+  <div class="flex-container wraprev">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+    <div class="flex-item">4</div>
+    <div class="flex-item">5</div>
+  </div>
+
+  <p>💡 For true 2D grids (rows AND columns aligned), use <strong>CSS Grid</strong>, not flex-wrap.</p>
+</body>
+</html>

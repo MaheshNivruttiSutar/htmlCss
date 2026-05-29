@@ -1,0 +1,174 @@
+.lesson-header {
+    max-width: 42rem;
+    margin: 0 auto 1.75rem;
+    font-family: system-ui, sans-serif;
+}
+
+.lesson-header h1 {
+    margin: 0 0 0.35rem;
+    font-size: 1.35rem;
+}
+
+.lesson-intro {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #52525b;
+    line-height: 1.5;
+}
+
+.exercise-flow {
+    max-width: 42rem;
+    margin: 0 auto;
+    font-family: system-ui, sans-serif;
+}
+
+.exercise-block {
+    margin-bottom: 2rem;
+}
+
+.exercise-block:last-child {
+    margin-bottom: 0;
+}
+
+.question-card {
+    padding: 1rem 1.25rem;
+    background: #f4f4f5;
+    border: 1px solid #d4d4d8;
+    border-radius: 8px;
+    margin-bottom: 0.65rem;
+    color: #18181b;
+}
+
+.answer-card {
+    padding: 1rem 1.25rem;
+    background: #fafafa;
+    border: 1px dashed #a1a1aa;
+    border-radius: 8px;
+    color: #18181b;
+}
+
+.answer-card--fullbleed {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.answer-card--fullbleed .qa-label {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+
+.answer-preview {
+    margin-top: 0.5rem;
+}
+
+
+.uber-button {
+    color: white;
+    background-color: black;
+    border: none;
+    height: 40px;
+    width: 110px;
+    cursor: pointer;
+}
+
+.amazon-button {
+    color: black;
+    background-color: rgb(255, 216, 20);
+    height: 30px;
+    width: 170px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.github-button {
+    color: white;
+    background-color: rgb(46, 164, 79);
+    height: 40px;
+    width: 90px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+
+.bootstrap-get-button,
+.bootstrap-download-button {
+    height: 40px;
+    width: 110px;
+    border: none;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.bootstrap-get-button {
+    background-color: rgb(121, 82, 179);
+    margin-right: 10px;
+}
+
+.bootstrap-download-button {
+    background-color: white;
+    border: 1px solid rgb(108, 117, 125);
+    color: rgb(108, 117, 125);
+}
+
+
+.linkedin-button-apply {
+    background-color: rgb(10, 102, 194);
+    min-height: 35px;
+    min-width: 240px;
+    white-space: nowrap;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+.linkedin-button-save {
+    height: 35px;
+    width: 70px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: rgb(10, 102, 194);
+    background-color: white;
+    border: 1px solid rgb(10, 102, 194);
+    cursor: pointer;
+}
+
+
+
+.answer-preview {
+    padding: 1rem 1.25rem;
+}
+
+.amazon-container a {
+    color: rgb(0, 113, 133);
+}
+
+.price {
+    color: rgb(0, 118, 0);
+    font-weight: bold;
+}
+
+.answer-preview button {
+    height: 35px;
+    width: 150px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.add-to-cart-button {
+    background-color: rgb(255, 216, 20);
+    margin-right: 8px;
+}
+
+.buy-now-button {
+    background-color: rgb(255, 164, 28);
+}
+
+.title {
+    font-weight: bold;
+    font-size: 24px;
+}

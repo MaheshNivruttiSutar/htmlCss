@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>11 — gap</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f6f8;
+    }
+    h1 { color: #222; }
+    h2 { color: #444; margin-top: 25px; margin-bottom: 5px; }
+    code { background: #eee; padding: 2px 6px; border-radius: 3px; }
+
+    .flex-container {
+      display: flex;
+      border: 2px dashed #333;
+      background: #fff;
+      padding: 8px;
+      margin-bottom: 15px;
+    }
+    .flex-item {
+      width: 20%;
+      background: #4a90e2;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+      border-radius: 4px;
+      font-size: 20px;
+    }
+
+    .gap-10       { gap: 10px; }
+    .gap-big      { gap: 30px; }
+    .wrapped      { flex-wrap: wrap; gap: 15px; }
+    .wrapped .flex-item { width: 30%; }
+    .row-col-gap  { flex-wrap: wrap; row-gap: 40px; column-gap: 10px; }
+    .row-col-gap .flex-item { width: 30%; }
+  </style>
+</head>
+<body>
+  <h1>11 — gap (spacing between items, the easy way!)</h1>
+  <p>No more margin hacks — just use <code>gap</code>.</p>
+
+  <h2><code>gap: 10px</code></h2>
+  <div class="flex-container gap-10">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+  </div>
+
+  <h2><code>gap: 30px</code></h2>
+  <div class="flex-container gap-big">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+  </div>
+
+  <h2>Gap with wrapping — applies between rows AND columns</h2>
+  <div class="flex-container wrapped">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+    <div class="flex-item">4</div>
+    <div class="flex-item">5</div>
+  </div>
+
+  <h2>Different row vs column gap</h2>
+  <p><code>row-gap: 40px; column-gap: 10px;</code></p>
+  <div class="flex-container row-col-gap">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+    <div class="flex-item">4</div>
+    <div class="flex-item">5</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>06 — position: absolute</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f6f8;
+    }
+    h1 { color: #222; }
+    h2 { color: #444; margin-top: 25px; }
+    code { background: #eee; padding: 2px 6px; border-radius: 3px; }
+
+    .wrapper {
+      border: 2px dashed #333;
+      background: #fff;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+
+    /* Card with badge */
+    .card {
+      position: relative;    /* this makes it the anchor! */
+      width: 250px;
+      height: 150px;
+      background: #4a90e2;
+      color: white;
+      padding: 20px;
+      border-radius: 8px;
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 20px;
+    }
+
+    .badge {
+      position: absolute;    /* pinned to parent with position: relative */
+      top: -10px;
+      right: -10px;
+      background: #e94e77;
+      color: white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    /* Card WITHOUT relative — badge goes to body! */
+    .card-no-relative {
+      width: 250px;
+      height: 150px;
+      background: #7b61ff;
+      color: white;
+      padding: 20px;
+      border-radius: 8px;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    /* Absolute centering */
+    .center-parent {
+      position: relative;
+      height: 200px;
+      background: #222;
+      border-radius: 8px;
+    }
+    .center-child {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #00c896;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 4px;
+      font-size: 18px;
+    }
+
+    /* Pinned corners */
+    .corner-parent {
+      position: relative;
+      height: 180px;
+      background: #222;
+      border-radius: 8px;
+    }
+    .corner {
+      position: absolute;
+      background: #f5a623;
+      color: #222;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    .tl { top: 10px;    left: 10px;   }
+    .tr { top: 10px;    right: 10px;  }
+    .bl { bottom: 10px; left: 10px;   }
+    .br { bottom: 10px; right: 10px;  }
+  </style>
+</head>
+<body>
+  <h1>06 — <code>position: absolute</code> (the most important!)</h1>
+
+  <h2>✅ Classic pattern: badge on a card</h2>
+  <p>Parent has <code>position: relative</code>, badge has <code>position: absolute; top: -10px; right: -10px;</code>.</p>
+  <div class="wrapper">
+    <div class="card">
+      <div class="badge">NEW</div>
+      Card with badge (parent is relative)
+    </div>
+  </div>
+
+  <h2>❌ What goes wrong without <code>position: relative</code> on parent</h2>
+  <p>The badge jumps to the top-right of the VIEWPORT (or nearest positioned ancestor) instead of the card.</p>
+  <div class="wrapper" style="position: relative;">
+    <div class="card-no-relative">
+      Card without relative
+    </div>
+    <div class="badge">NEW (wrong spot!)</div>
+  </div>
+
+  <h2>💎 Perfect centering with absolute + transform</h2>
+  <div class="wrapper">
+    <div class="center-parent">
+      <div class="center-child">I'm perfectly centered!</div>
+    </div>
+  </div>
+
+  <h2>Pinning to all 4 corners</h2>
+  <div class="wrapper">
+    <div class="corner-parent">
+      <div class="corner tl">Top-Left</div>
+      <div class="corner tr">Top-Right</div>
+      <div class="corner bl">Bottom-Left</div>
+      <div class="corner br">Bottom-Right</div>
+    </div>
+  </div>
+
+  <h2>🧠 The rule to REMEMBER</h2>
+  <p><code>position: absolute</code> looks up the DOM for the nearest ancestor with <code>position: relative</code> (or absolute/fixed/sticky). If none exist, it uses the <code>&lt;html&gt;</code> element.</p>
+  <p><strong>Fix the #1 absolute bug:</strong> add <code>position: relative</code> to the parent you want it to pin to!</p>
+</body>
+</html>

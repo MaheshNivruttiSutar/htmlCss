@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>13 — flex shorthand</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f6f8;
+    }
+    h1 { color: #222; }
+    h2 { color: #444; margin-top: 25px; margin-bottom: 5px; }
+    code { background: #eee; padding: 2px 6px; border-radius: 3px; }
+
+    .flex-container {
+      display: flex;
+      border: 2px dashed #333;
+      background: #fff;
+      padding: 8px;
+      gap: 6px;
+      margin-bottom: 15px;
+    }
+    .flex-item {
+      background: #4a90e2;
+      color: white;
+      padding: 15px 10px;
+      text-align: center;
+      border-radius: 4px;
+      font-size: 18px;
+    }
+
+    .demo-1 .flex-item { flex: 1; }
+    .demo-2 .flex-item { flex: 1; }
+    .demo-2 .flex-item:nth-child(2) { flex: 2; background: #e94e77; }
+
+    .demo-3 .flex-item:nth-child(1) { flex: 1 0 200px; background: #e94e77; }
+    .demo-3 .flex-item:nth-child(2) { flex: 1; }
+    .demo-3 .flex-item:nth-child(3) { flex: 1; }
+
+    .demo-4 .flex-item:nth-child(1) { flex: none; background: #e94e77; width: 100px; }
+    .demo-4 .flex-item:nth-child(2) { flex: auto; }
+    .demo-4 .flex-item:nth-child(3) { flex: auto; }
+  </style>
+</head>
+<body>
+  <h1>13 — flex shorthand</h1>
+  <p>The <code>flex</code> property sets grow + shrink + basis in one line.</p>
+  <pre style="background:#fff; padding:10px; border-radius:4px;">
+flex: &lt;grow&gt; &lt;shrink&gt; &lt;basis&gt;
+
+flex: 1 0 10px;
+/* same as */
+flex-grow: 1;
+flex-shrink: 0;
+flex-basis: 10px;</pre>
+
+  <h2><code>flex: 1</code> on all items — equal widths</h2>
+  <p>Same as <code>flex-grow: 1; flex-shrink: 1; flex-basis: 0</code></p>
+  <div class="flex-container demo-1">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+  </div>
+
+  <h2>Item 2 → <code>flex: 2</code> (takes twice the space)</h2>
+  <div class="flex-container demo-2">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+  </div>
+
+  <h2>Item 1 → <code>flex: 1 0 200px</code> — min 200px, can grow, can't shrink</h2>
+  <div class="flex-container demo-3">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+  </div>
+
+  <h2>Item 1 → <code>flex: none</code> (fixed 100px). Items 2 & 3 → <code>flex: auto</code></h2>
+  <p><code>flex: none</code> = <code>0 0 auto</code> (fixed size). <code>flex: auto</code> = <code>1 1 auto</code> (flexible).</p>
+  <div class="flex-container demo-4">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+  </div>
+
+  <h2>Shorthand cheat sheet</h2>
+  <table style="border-collapse: collapse; background: #fff;">
+    <thead>
+      <tr style="background:#222;color:#fff;">
+        <th style="padding:8px 14px;text-align:left;">Shorthand</th>
+        <th style="padding:8px 14px;text-align:left;">grow</th>
+        <th style="padding:8px 14px;text-align:left;">shrink</th>
+        <th style="padding:8px 14px;text-align:left;">basis</th>
+        <th style="padding:8px 14px;text-align:left;">Meaning</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td style="padding:6px 14px;border:1px solid #ccc;"><code>flex: 1</code></td><td style="padding:6px 14px;border:1px solid #ccc;">1</td><td style="padding:6px 14px;border:1px solid #ccc;">1</td><td style="padding:6px 14px;border:1px solid #ccc;">0</td><td style="padding:6px 14px;border:1px solid #ccc;">Equal grow</td></tr>
+      <tr><td style="padding:6px 14px;border:1px solid #ccc;"><code>flex: 2</code></td><td style="padding:6px 14px;border:1px solid #ccc;">2</td><td style="padding:6px 14px;border:1px solid #ccc;">1</td><td style="padding:6px 14px;border:1px solid #ccc;">0</td><td style="padding:6px 14px;border:1px solid #ccc;">Grows 2×</td></tr>
+      <tr><td style="padding:6px 14px;border:1px solid #ccc;"><code>flex: auto</code></td><td style="padding:6px 14px;border:1px solid #ccc;">1</td><td style="padding:6px 14px;border:1px solid #ccc;">1</td><td style="padding:6px 14px;border:1px solid #ccc;">auto</td><td style="padding:6px 14px;border:1px solid #ccc;">Uses width</td></tr>
+      <tr><td style="padding:6px 14px;border:1px solid #ccc;"><code>flex: none</code></td><td style="padding:6px 14px;border:1px solid #ccc;">0</td><td style="padding:6px 14px;border:1px solid #ccc;">0</td><td style="padding:6px 14px;border:1px solid #ccc;">auto</td><td style="padding:6px 14px;border:1px solid #ccc;">Fixed size</td></tr>
+      <tr><td style="padding:6px 14px;border:1px solid #ccc;"><code>flex: 10px</code></td><td style="padding:6px 14px;border:1px solid #ccc;">0</td><td style="padding:6px 14px;border:1px solid #ccc;">1</td><td style="padding:6px 14px;border:1px solid #ccc;">10px</td><td style="padding:6px 14px;border:1px solid #ccc;">Starts at 10px</td></tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top:20px;">⚠️ Note: shorthand <code>flex-basis</code> defaults to <code>0</code> (not <code>auto</code>) unless you use <code>flex: auto</code>.</p>
+</body>
+</html>

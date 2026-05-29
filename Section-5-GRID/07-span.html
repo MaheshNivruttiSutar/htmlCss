@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>07 — span</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f6f8;
+    }
+    h1 { color: #222; }
+    h2 { color: #444; margin-top: 25px; }
+    code { background: #eee; padding: 2px 6px; border-radius: 3px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 80px;
+      border: 2px dashed #333;
+      background: #fff;
+      padding: 8px;
+      gap: 8px;
+      margin-bottom: 15px;
+    }
+
+    .item {
+      background: #7b61ff;
+      color: white;
+      text-align: center;
+      line-height: 80px;
+      font-size: 18px;
+      border-radius: 4px;
+    }
+
+    .wide    { background: #e94e77; grid-column: span 2; }
+    .tall    { background: #f5a623; grid-row: span 2; line-height: 168px; }
+    .big     { background: #00c896; grid-column: span 2; grid-row: span 2; line-height: 168px; }
+  </style>
+</head>
+<body>
+  <h1>07 — <code>span</code> (easier placement)</h1>
+  <p>Instead of "start at X, end at Y", just say "span N tracks".</p>
+
+  <h2><code>grid-column: span 2</code> — item is 2 columns wide</h2>
+  <div class="grid">
+    <div class="item wide">wide (span 2)</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+  </div>
+
+  <h2><code>grid-row: span 2</code> — item is 2 rows tall</h2>
+  <div class="grid">
+    <div class="item tall">tall</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+    <div class="item">7</div>
+    <div class="item">8</div>
+    <div class="item">9</div>
+  </div>
+
+  <h2>Combine: 2×2 feature block</h2>
+  <p><code>grid-column: span 2; grid-row: span 2;</code></p>
+  <div class="grid">
+    <div class="item big">Featured</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+    <div class="item">7</div>
+    <div class="item">8</div>
+    <div class="item">9</div>
+    <div class="item">10</div>
+  </div>
+</body>
+</html>

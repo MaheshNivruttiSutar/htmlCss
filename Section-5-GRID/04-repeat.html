@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>04 — repeat()</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f6f8;
+    }
+    h1 { color: #222; }
+    h2 { color: #444; margin-top: 25px; }
+    code { background: #eee; padding: 2px 6px; border-radius: 3px; }
+
+    .grid {
+      display: grid;
+      border: 2px dashed #333;
+      background: #fff;
+      padding: 8px;
+      gap: 8px;
+      margin-bottom: 15px;
+    }
+
+    .item {
+      background: #7b61ff;
+      color: white;
+      padding: 18px 10px;
+      text-align: center;
+      font-size: 18px;
+      border-radius: 4px;
+    }
+
+    .four   { grid-template-columns: repeat(4, 1fr); }
+    .six    { grid-template-columns: repeat(6, 1fr); }
+    .mixed  { grid-template-columns: 200px repeat(3, 1fr) 100px; }
+    .fixed  { grid-template-columns: repeat(3, 150px); }
+  </style>
+</head>
+<body>
+  <h1>04 — <code>repeat()</code> — write less, do more</h1>
+
+  <h2><code>repeat(4, 1fr)</code> — 4 equal columns</h2>
+  <p>Shorthand for <code>1fr 1fr 1fr 1fr</code></p>
+  <div class="grid four">
+    <div class="item">1</div><div class="item">2</div>
+    <div class="item">3</div><div class="item">4</div>
+  </div>
+
+  <h2><code>repeat(6, 1fr)</code> — 6 equal columns</h2>
+  <div class="grid six">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+    <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+  </div>
+
+  <h2>Mixing repeat with fixed: <code>200px repeat(3, 1fr) 100px</code></h2>
+  <div class="grid mixed">
+    <div class="item">200px</div>
+    <div class="item">1fr</div>
+    <div class="item">1fr</div>
+    <div class="item">1fr</div>
+    <div class="item">100px</div>
+  </div>
+
+  <h2><code>repeat(3, 150px)</code> — repeat fixed widths</h2>
+  <div class="grid fixed">
+    <div class="item">150px</div>
+    <div class="item">150px</div>
+    <div class="item">150px</div>
+  </div>
+</body>
+</html>

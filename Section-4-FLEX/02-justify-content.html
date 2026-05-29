@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>02 — justify-content</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f6f8;
+    }
+    h1 { color: #222; }
+    h2 { color: #444; margin-top: 25px; margin-bottom: 5px; }
+    code { background: #eee; padding: 2px 6px; border-radius: 3px; }
+
+    .flex-container {
+      display: flex;
+      border: 2px dashed #333;
+      background: #fff;
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+    .flex-item {
+      width: 20%;
+      background: #4a90e2;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+      border-radius: 4px;
+      font-size: 20px;
+    }
+    .fs  { justify-content: flex-start; }
+    .fe  { justify-content: flex-end; }
+    .c   { justify-content: center; }
+    .sb  { justify-content: space-between; }
+    .sa  { justify-content: space-around; }
+    .se  { justify-content: space-evenly; }
+  </style>
+</head>
+<body>
+  <h1>02 — justify-content (main axis spacing)</h1>
+  <p>Controls how items are spaced <strong>horizontally</strong> (along the main axis). Each box below has 3 items of width 20%.</p>
+
+  <h2><code>flex-start</code> — default (stuck to the left)</h2>
+  <div class="flex-container fs">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+  </div>
+
+  <h2><code>flex-end</code> — stuck to the right</h2>
+  <div class="flex-container fe">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+  </div>
+
+  <h2><code>center</code> — centered horizontally</h2>
+  <div class="flex-container c">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+  </div>
+
+  <h2><code>space-between</code> — equal gaps between, items touch edges</h2>
+  <div class="flex-container sb">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+  </div>
+
+  <h2><code>space-around</code> — equal space around each item (edges get half)</h2>
+  <div class="flex-container sa">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+  </div>
+
+  <h2><code>space-evenly</code> — all gaps exactly equal (including edges)</h2>
+  <div class="flex-container se">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>03 — align-items</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f6f8;
+    }
+    h1 { color: #222; }
+    h2 { color: #444; margin-top: 25px; margin-bottom: 5px; }
+    code { background: #eee; padding: 2px 6px; border-radius: 3px; }
+
+    .flex-container {
+      display: flex;
+      border: 2px dashed #333;
+      background: #fff;
+      padding: 8px;
+      height: 180px;
+      margin-bottom: 10px;
+    }
+    .flex-item {
+      width: 20%;
+      background: #4a90e2;
+      color: white;
+      text-align: center;
+      border-radius: 4px;
+      font-size: 20px;
+      margin-right: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .flex-item:nth-child(1) { height: 75px; }
+    .flex-item:nth-child(2) { height: 100px; }
+    .flex-item:nth-child(3) { height: 125px; }
+
+    .stretch   { align-items: stretch; }
+    .stretch .flex-item:nth-child(1) { height: auto; }
+    .fs        { align-items: flex-start; }
+    .fe        { align-items: flex-end; }
+    .center    { align-items: center; }
+  </style>
+</head>
+<body>
+  <h1>03 — align-items (cross axis alignment)</h1>
+  <p>Controls how items align <strong>vertically</strong> (along the cross axis). Items below have different heights to make the effect obvious.</p>
+
+  <h2><code>stretch</code> — default (item 1 has no fixed height, so it stretches)</h2>
+  <div class="flex-container stretch">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+  </div>
+
+  <h2><code>flex-start</code> — align to the top</h2>
+  <div class="flex-container fs">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+  </div>
+
+  <h2><code>flex-end</code> — align to the bottom</h2>
+  <div class="flex-container fe">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+  </div>
+
+  <h2><code>center</code> — centered vertically</h2>
+  <div class="flex-container center">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+  </div>
+</body>
+</html>

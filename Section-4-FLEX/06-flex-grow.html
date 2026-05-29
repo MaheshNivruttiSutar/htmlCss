@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>06 — flex-grow</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f6f8;
+    }
+    h1 { color: #222; }
+    h2 { color: #444; margin-top: 25px; margin-bottom: 5px; }
+    code { background: #eee; padding: 2px 6px; border-radius: 3px; }
+
+    .flex-container {
+      display: flex;
+      border: 2px dashed #333;
+      background: #fff;
+      padding: 8px;
+      margin-bottom: 15px;
+    }
+    .flex-item {
+      width: 20%;
+      background: #4a90e2;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+      border-radius: 4px;
+      margin-right: 6px;
+      font-size: 20px;
+    }
+
+    .demo-1 .flex-item:nth-child(2) { flex-grow: 1; background: #e94e77; }
+    .demo-2 .flex-item:nth-child(1),
+    .demo-2 .flex-item:nth-child(2) { flex-grow: 1; background: #e94e77; }
+    .demo-3 .flex-item:nth-child(1) { flex-grow: 2; background: #e94e77; }
+    .demo-3 .flex-item:nth-child(2) { flex-grow: 1; background: #f5a623; }
+  </style>
+</head>
+<body>
+  <h1>06 — flex-grow (eat leftover space)</h1>
+  <p>Items have <code>width: 20%</code>, so 3 items take 60% — leaving 40% empty space. <code>flex-grow</code> decides who eats it.</p>
+
+  <h2>No <code>flex-grow</code> — 40% space is unused</h2>
+  <div class="flex-container">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+  </div>
+
+  <h2>Item 2 → <code>flex-grow: 1</code> — it eats ALL the leftover</h2>
+  <div class="flex-container demo-1">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+  </div>
+
+  <h2>Items 1 & 2 → <code>flex-grow: 1</code> each — they split leftover 50/50</h2>
+  <div class="flex-container demo-2">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+  </div>
+
+  <h2>Item 1 → <code>flex-grow: 2</code>, Item 2 → <code>flex-grow: 1</code></h2>
+  <p>Item 1 gets 2/3 of leftover, Item 2 gets 1/3 of leftover.</p>
+  <div class="flex-container demo-3">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>01 — display</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f4f6f8; }
+    h1 { color: #222; }
+    h2 { color: #444; margin-top: 25px; }
+    code { background: #eee; padding: 2px 6px; border-radius: 3px; }
+
+    .wrapper { border: 2px dashed #333; background: #fff; padding: 10px; margin-bottom: 15px; }
+
+    .block, .inline, .inline-block {
+      color: white;
+      padding: 15px;
+      text-align: center;
+      border-radius: 4px;
+      font-size: 18px;
+    }
+
+    .block {
+      display: block;
+      background: #e94e77;
+      margin: 5px 0;
+      width: 120px;
+      height: 60px;
+    }
+
+    .inline {
+      display: inline;
+      background: #4a90e2;
+      width: 120px;   /* ignored */
+      height: 60px;   /* ignored */
+    }
+
+    .inline-block {
+      display: inline-block;
+      background: #00c896;
+      width: 120px;
+      height: 60px;
+      margin: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>01 — display</h1>
+
+  <h2><code>display: block</code> — full width, new line each</h2>
+  <p>Even though width is 120px, each item starts on a new line.</p>
+  <div class="wrapper">
+    <div class="block">1</div>
+    <div class="block">2</div>
+    <div class="block">3</div>
+  </div>
+
+  <h2><code>display: inline</code> — width/height IGNORED!</h2>
+  <p>Even though we set width 120px + height 60px, inline elements ignore them.</p>
+  <div class="wrapper">
+    <span class="inline">1</span>
+    <span class="inline">2</span>
+    <span class="inline">3</span>
+  </div>
+
+  <h2><code>display: inline-block</code> — best of both worlds</h2>
+  <p>Items stay on one line BUT width and height work!</p>
+  <div class="wrapper">
+    <span class="inline-block">1</span>
+    <span class="inline-block">2</span>
+    <span class="inline-block">3</span>
+  </div>
+</body>
+</html>

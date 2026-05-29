@@ -1,0 +1,67 @@
+.lesson-header {
+    max-width: 42rem;
+    margin: 0 auto 1.75rem;
+    font-family: system-ui, sans-serif;
+}
+
+.lesson-header h1 {
+    margin: 0 0 0.35rem;
+    font-size: 1.35rem;
+}
+
+.lesson-intro {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #52525b;
+    line-height: 1.5;
+}
+
+.exercise-flow {
+    max-width: 42rem;
+    margin: 0 auto;
+    font-family: system-ui, sans-serif;
+}
+
+.exercise-block {
+    margin-bottom: 2rem;
+}
+
+.exercise-block:last-child {
+    margin-bottom: 0;
+}
+
+.question-card {
+    padding: 1rem 1.25rem;
+    background: #f4f4f5;
+    border: 1px solid #d4d4d8;
+    border-radius: 8px;
+    margin-bottom: 0.65rem;
+    color: #18181b;
+}
+
+.answer-card {
+    padding: 1rem 1.25rem;
+    background: #fafafa;
+    border: 1px dashed #a1a1aa;
+    border-radius: 8px;
+    color: #18181b;
+}
+
+.answer-card--fullbleed {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.answer-card--fullbleed .qa-label {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+
+.answer-preview {
+    margin-top: 0.5rem;
+}
+
+.text-style-24 {
+    background-color: rgb(98, 186, 180);
+    padding: 10px;
+}

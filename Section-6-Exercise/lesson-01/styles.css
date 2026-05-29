@@ -1,0 +1,209 @@
+/*
+  Lessons 01–03 — styles.css (pairs with lesson-01/index.html)
+
+  Includes Lesson 01 exercises plus Lesson 02 (buttons) and Lesson 03 (paragraph).
+*/
+
+/* ----- Layout: question card → answer card (Live Server) ----- */
+.lesson-header {
+  max-width: 42rem;
+  margin: 0 auto 1.75rem;
+  font-family: system-ui, sans-serif;
+}
+
+.lesson-header h1 {
+  margin: 0 0 0.35rem;
+  font-size: 1.35rem;
+}
+
+.lesson-intro {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #52525b;
+  line-height: 1.5;
+}
+
+.exercise-flow {
+  max-width: 42rem;
+  margin: 0 auto;
+  font-family: system-ui, sans-serif;
+}
+
+.exercise-block {
+  margin-bottom: 2rem;
+}
+
+.exercise-block:last-child {
+  margin-bottom: 0;
+}
+
+.question-card {
+  padding: 1rem 1.25rem;
+  background: #f4f4f5;
+  border: 1px solid #d4d4d8;
+  border-radius: 8px;
+  margin-bottom: 0.65rem;
+  color: #18181b;
+}
+
+.answer-card {
+  padding: 1rem 1.25rem;
+  background: #fafafa;
+  border: 1px dashed #a1a1aa;
+  border-radius: 8px;
+  color: #18181b;
+}
+
+.answer-card--fullbleed {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.answer-card--fullbleed .qa-label {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.answer-preview {
+  margin-top: 0.5rem;
+}
+
+.qa-label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #71717a;
+  margin-bottom: 0.45rem;
+}
+
+.question-text {
+  margin: 0;
+  line-height: 1.55;
+  font-size: 0.95rem;
+}
+
+.answer-links {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.answer-links-sep {
+  margin: 0 0.35rem;
+  color: #a1a1aa;
+}
+
+/* ---------------------------------------------------------------------------
+   EXERCISE 1 — Button
+   Question: Button text “Click me”, background red.
+   Solution: background-color red; fixed width/height so it reads as a small red
+   control; border-radius and bold text for clarity (extra polish beyond minimum).
+   --------------------------------------------------------------------------- */
+.click-me-button {
+  width: 100px;
+  height: 30px;
+  background-color: red;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* ---------------------------------------------------------------------------
+   EXERCISE 2 — First paragraph
+   Question: “Hello World” with red background.
+   Solution: Block-level <p> fills the row; background-color red; white text and
+   text-align center match the red banner look; padding separates text from edges.
+   --------------------------------------------------------------------------- */
+.text {
+  font-size: 30px;
+  font-family: sans-serif, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  background-color: red;
+  text-align: center;
+  padding: 5px;
+  margin: 0 auto;
+  color: white;
+}
+
+/* ---------------------------------------------------------------------------
+   EXERCISE 2 — Second paragraph
+   Question: Sentence about a paragraph with blue background — shown on blue bg.
+   Solution: Same centered banner pattern as .text but background-color blue and
+   slightly smaller font so the two strips read as related but distinct.
+   --------------------------------------------------------------------------- */
+.text-2 {
+  font-size: 20px;
+  font-family: sans-serif, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  background-color: blue;
+  text-align: center;
+  margin: auto;
+  padding: 5px;
+  color: white;
+}
+
+/* ---------------------------------------------------------------------------
+   EXERCISE 3 — Link (class google-link on <a> in index.html)
+   Question: Link to Google (new tab comes from HTML: target="_blank").
+   Solution: Typical link blue so it reads as a hyperlink (underline comes from the browser).
+   --------------------------------------------------------------------------- */
+.google-link {
+  color: #1a0dab;
+}
+
+/* ---------------------------------------------------------------------------
+   LESSON 02 — Buttons MAHESH (blue) & SUTAR (red) — same prompts as lesson-02/
+   --------------------------------------------------------------------------- */
+.answer-row {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.mahesh {
+  padding: 10px 15px;
+  background-color: rgb(51, 51, 217);
+  border-radius: 5px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  border: none;
+  font: inherit;
+}
+
+.sutar {
+  padding: 10px 15px;
+  background-color: rgb(221, 60, 60);
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  border: none;
+  font: inherit;
+}
+
+/* ---------------------------------------------------------------------------
+   LESSON 03 — Single “Hello World” paragraph, red background (lesson-03/)
+   --------------------------------------------------------------------------- */
+.hello-world {
+  margin: 0;
+  padding: 0.75rem 1rem;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  font-size: 1.125rem;
+  font-family: sans-serif, Arial, Helvetica, sans-serif;
+}
+
+
+.amazon-container {
+  padding: 15px;
+  font-size: 16px;
+}
+
+.add-to-cart-button,
+.buy-now-button {
+  font-size: 16px;
+}

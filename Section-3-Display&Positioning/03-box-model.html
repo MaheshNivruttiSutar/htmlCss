@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>03 — Box Model</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f6f8;
+    }
+    h1 { color: #222; }
+    h2 { color: #444; margin-top: 25px; }
+    code { background: #eee; padding: 2px 6px; border-radius: 3px; }
+
+    /* Visual box model demo */
+    .demo-wrapper {
+      background: #fff;
+      padding: 20px;
+      border: 2px dashed #333;
+      margin-bottom: 20px;
+    }
+
+    .margin-visual {
+      background: #ffd3b6;
+      padding: 30px;
+      display: inline-block;
+    }
+    .border-visual {
+      background: #ffaaa5;
+      padding: 30px;
+    }
+    .padding-visual {
+      background: #ff8b94;
+      padding: 30px;
+    }
+    .content-visual {
+      background: #a8d8ea;
+      padding: 20px;
+      color: #222;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    /* Standalone box demos */
+    .box {
+      background: #7b61ff;
+      color: white;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    .simple {
+      width: 150px;
+      padding: 20px;
+      border: 5px solid #222;
+      margin: 20px;
+    }
+
+    /* Margin collapse demo */
+    .collapse-wrapper {
+      background: #fff;
+      padding: 10px;
+      border: 2px dashed #333;
+    }
+    .collapse-box {
+      background: #e94e77;
+      color: white;
+      padding: 10px;
+      margin: 30px 0; /* vertical margins will COLLAPSE between siblings */
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>03 — The Box Model</h1>
+
+  <h2>The 4 layers (from outside in)</h2>
+  <p>Visualization: orange = margin, red = border, pink = padding, blue = content.</p>
+  <div class="demo-wrapper">
+    <div class="margin-visual">
+      <div class="border-visual">
+        <div class="padding-visual">
+          <div class="content-visual">CONTENT</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>A real element using margin, border, padding</h2>
+  <div class="demo-wrapper">
+    <div class="box simple">
+      width: 150px<br>
+      padding: 20px<br>
+      border: 5px<br>
+      margin: 20px
+    </div>
+  </div>
+
+  <h2>⚠️ Vertical margin collapse</h2>
+  <p>Each box has <code>margin: 30px 0</code>. You'd expect 60px between them. But CSS "collapses" adjacent vertical margins, so the actual gap is only 30px.</p>
+  <div class="collapse-wrapper">
+    <div class="collapse-box">Box 1 (margin: 30px 0)</div>
+    <div class="collapse-box">Box 2 (margin: 30px 0)</div>
+    <div class="collapse-box">Box 3 (margin: 30px 0)</div>
+  </div>
+  <p>💡 This is why <code>gap</code> in Flexbox/Grid is cleaner than margins!</p>
+</body>
+</html>
