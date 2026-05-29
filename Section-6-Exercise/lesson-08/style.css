@@ -1,13 +1,195 @@
-.text-box-container {
-    display: block;
+/* Layout */
+.lesson-header {
+    max-width: 42rem;
+    margin: 0 auto 1.75rem;
+    font-family: system-ui, sans-serif;
 }
 
-.text-box1 {
-    margin-bottom: 10px;
-    border: 1px solid #000;
+.lesson-header h1 {
+    margin: 0 0 0.35rem;
+    font-size: 1.35rem;
+}
+
+.lesson-intro {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #52525b;
+    line-height: 1.5;
+}
+
+.exercise-flow {
+    max-width: 42rem;
+    margin: 0 auto;
+    font-family: system-ui, sans-serif;
+}
+
+.exercise-block {
+    margin-bottom: 2rem;
+}
+
+.exercise-block:last-child {
+    margin-bottom: 0;
+}
+
+.question-card {
+    padding: 1rem 1.25rem;
+    background: #f4f4f5;
+    border: 1px solid #d4d4d8;
+    border-radius: 8px;
+    margin-bottom: 0.65rem;
+    color: #18181b;
+}
+
+.answer-card {
+    padding: 1rem 1.25rem;
+    background: #fafafa;
+    border: 1px dashed #a1a1aa;
+    border-radius: 8px;
+    color: #18181b;
+}
+
+.qa-label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #71717a;
+    margin-bottom: 0.45rem;
+}
+
+.question-text {
+    margin: 0;
+    line-height: 1.55;
+    font-size: 0.95rem;
 }
 
 .text-style-24 {
     background-color: rgb(239, 234, 234);
     padding: 8px;
+}
+
+/* Question 01 — block inputs on separate lines */
+.text-box-container {
+    display: block;
+}
+
+.text-box1 {
+    display: block;
+    margin-bottom: 10px;
+    border: 1px solid #000;
+}
+
+.text-box {
+    display: block;
+    border: 1px solid #000;
+}
+
+/* Question 02 — paragraph and buttons on one line */
+.button-container {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.text-box-paragraph {
+    display: inline-block;
+    width: 200px;
+    vertical-align: middle;
+    margin: 0;
+}
+
+/* Question 03 — Google (8c) */
+.exercise-google .google-logo {
+    display: block;
+    width: 200px;
+    margin-left: 150px;
+    margin-bottom: 10px;
+}
+
+.exercise-google .google-search {
+    border: none;
+    padding: 12px 16px;
+    font-size: 16px;
+    width: 500px;
+    border-radius: 30px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Question 04 — Sign up (8d) */
+.exercise-signup input {
+    border: 1px solid rgb(200, 200, 200);
+    padding: 12px 16px;
+    font-size: 16px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.exercise-signup .signup-first-name {
+    width: 148px;
+}
+
+.exercise-signup .signup-last-name {
+    width: 148px;
+}
+
+.exercise-signup .signup-email {
+    display: block;
+    width: 338px;
+}
+
+.exercise-signup .signup-button {
+    display: block;
+    background-color: rgb(47, 127, 231);
+    color: white;
+    border: none;
+    width: 338px;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Question 05 — Uber (8e) */
+.exercise-uber {
+    font-family: Arial, sans-serif;
+}
+
+.exercise-uber .uber-title {
+    font-size: 40px;
+    margin: 0 0 25px;
+}
+
+.exercise-uber .uber-pickup,
+.exercise-uber .uber-destination {
+    display: block;
+    background-color: rgb(240, 240, 240);
+    border: none;
+    margin-bottom: 10px;
+    padding: 15px 20px;
+    font-size: 16px;
+    width: 400px;
+}
+
+.exercise-uber .uber-destination {
+    margin-bottom: 35px;
+}
+
+.exercise-uber .uber-request-button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 16px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.exercise-uber .uber-schedule-button {
+    background-color: rgb(240, 240, 240);
+    border: none;
+    padding: 15px 25px;
+    font-size: 16px;
+    cursor: pointer;
 }
